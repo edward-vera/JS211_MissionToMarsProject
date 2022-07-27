@@ -10,7 +10,57 @@ const jobTypes = {
 };
 
 // Your code will go here
+// crewMember
+//  should have a name, a job, a specialSkill, and ship upon instantiation
+class CrewMember {
+  constructor(name, job, skill, ship){
+  this.name = name;
+  this.job = job;
+  this.skill = skill;
+  this.ship = ship;
 
+}
+
+
+
+
+// can enter a ship
+// this creates a new Ship. Can you build a class that can be called so that this Ship can be built?
+enterShip(boat) {
+  this.ship = boat;
+
+  this.ship.crew.push(this);
+
+
+}
+}
+
+// can return a mission statement correctly
+
+
+
+
+// Ship
+class Ship {
+  constructor(name, type, ability) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+    
+  }
+
+  missionStatement() {
+    if(this.crew.length == 0) {
+      return "Can't perform a mission yet.";
+    }else {
+      return this.ability;
+    }
+}
+}
+// should have a name, a type, an ability and an empty crew upon instantiation
+
+// can return a mission statment correctly
 
 
 
@@ -28,7 +78,7 @@ if (typeof describe === 'function'){
       const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
       assert.equal(crewMember1.name, 'Rick Martinez');
       assert.equal(crewMember1.job, 'pilot');
-      assert.equal(crewMember1.specialSkill, 'chemistry');
+      assert.equal(crewMember1.skill, 'chemistry');
       assert.equal(crewMember1.ship, null);
     });
 
